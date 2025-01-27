@@ -1,0 +1,7 @@
+Create a server using typescript and express -done
+and perform CRUD operations-done
+Go on to create a SQL DB which must work on different utility as well-pg database --done
+create a dummy datasetm--done
+Use Redis for caching the db.
+
+connection string=postgresql://neondb_owner:vHoBRczk31eE@ep-blue-firefly-a8xsim29.eastus2.azure.neon.tech/neondb?sslmode=require
