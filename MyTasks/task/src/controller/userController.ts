@@ -10,8 +10,8 @@ export async function insertController(req: Request, res: Response) {
       // Get the Redis client
       const client = await runRedisOperations();
   
-      // Cache the new user data in Redis
-      await client.set(`user:${username}`, JSON.stringify(user), { EX: 3600 }); // Cache expires in 1 hour
+      
+      await client.set(`user:${username}`, JSON.stringify(user), { EX: 3600 });
   
       res.status(201).json(user);
     } catch (error: any) {
@@ -34,15 +34,13 @@ export async function updateController(req: Request, res: Response) {
       const updatedData = req.body;
       const username = req.body.username;
       
-  
-      // Update user data in the database
       const user = await updateUser(userId, updatedData);
   
-      // Get the Redis client
+      
       const client = await runRedisOperations();
   
       // Update the Redis cache with the same user data
-      await client.set(`user:${username}`, JSON.stringify(user), { EX: 3600 }); // Cache expires in 1 hour
+      await client.set(`user:${username}`, JSON.stringify(user), { EX: 3600 }); 
   
       res.status(200).json(user);
     } catch (error: any) {
@@ -55,15 +53,12 @@ export async function deleteController(req: Request, res: Response) {
     const userId = parseInt(req.params.id);
 
     // Get the user from the database to retrieve the username
-    const user = await getAllUsers(); // You may need to fetch the user by id instead of getting all users
-    const username = req.body.username; // Assuming user is fetched from the database
-     // Get the Redis client
+    const user = await getAllUsers(); 
+    const username = req.body.username; 
+     
      const client = await runRedisOperations();
-
-     // Delete the corresponding cache from Redis
      await client.del(`user:${username}`);
 
-    // Delete the user from the database
     await deleteUser(userId);
     res.status(200).json({ message: 'User deleted successfully' });
   } catch (error: any) {
