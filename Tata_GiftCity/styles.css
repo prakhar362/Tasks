@@ -12,7 +12,7 @@ body {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 0;
 }
 
 /* Header */
@@ -394,7 +394,6 @@ nav a {
         bottom: -30px;
     }
 }
-
 /* GIFT City Importance */
 .gift-importance {
     background: #ffffff;
@@ -402,36 +401,207 @@ nav a {
     text-align: center;
 }
 
-.gift-importance h2 {
+.gift-importance h1 {
     margin-bottom: 2rem;
+    font-size: 2.5rem;
 }
 
-.features {
+/* World Map Container */
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.world-map {
+    width: 100%;
+    height: auto;
+}
+/* Feature Icons */
+.feature-icon {
+    position: absolute;
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 220px; /* Ensuring a larger space for visibility */
 }
 
+/* Making Icons Clear and Large */
+.feature-icon img {
+    width: 240px;  /* Optimized size for better visibility */
+    height: 100px;
+    background: transparent; /* Light background for visibility */
+    padding: 15px; /* Space inside icon */
+    border-radius: 12px; /* Soft edges for a premium look */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for visibility */
+}
 
+/* Icon Text Styling */
+.feature-icon p {
+    font-size: 1.2rem; /* Slightly larger font */
+    font-weight: 600;
+    color: #0046AD; /* Bold blue for emphasis */
+    margin-top: 10px;
+    max-width: 180px; /* Restrict text width */
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .feature-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .feature-icon {
+        position: static; /* Stack icons vertically */
+        width: 100%; /* Full width */
+        margin-bottom: 1rem; /* Space between icons */
+    }
+
+    .feature-icon img {
+        width: 80%; /* Responsive size */
+        height: auto;
+        max-width: 250px; /* Prevents oversized icons */
+    }
+
+    .feature-icon p {
+        font-size: 1rem;
+    }
+}
 
 /* Why Invest Section */
 .why-invest {
-    background: linear-gradient(to bottom, #1a3c34, #2a5d52);
+    position: relative;
+    background: linear-gradient(90deg, #39AC68 0%, #3577B5 100%);
     color: #fff;
-    padding: 3rem 0;
+    padding: 3rem 0 7rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.why-invest::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/Vector.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.why-invest h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.why-invest > .container > p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
 }
 
 .invest-benefits {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .benefit {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 8px;
+    width: 18%;
+    max-width: 200px;
+    max-height: 520px;
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
 }
+
+.benefit img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.0rem;
+}
+
+.benefit h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.benefit p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .invest-benefits {
+        gap: 1.5rem;
+        margin-left: -11%;
+    }
+    
+    .benefit {
+        width: calc(33.333% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .benefit {
+        width: calc(50% - 1rem);
+    }
+    
+    .why-invest h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .benefit {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .why-invest {
+        padding: 2rem 0 4rem;
+    }
+    
+    .invest-benefits {
+        margin-top: 1rem;
+    }
+}
+
 
 /* Our Presence */
 .presence {
@@ -457,56 +627,103 @@ nav a {
     background: #e6f0fa;
     padding: 3rem 0;
 }
+/* Previous CSS remains the same */
 
 /* Footer */
 footer {
-    background: #1a3c34;
+    background: #fff;
+    padding: 4rem 0;
+    text-align: left;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+footer h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+    margin: 0;
+}
+.request-form {
+    background: #fff;
+    padding: 2rem;
+    border: 2px solid #1c1d1e;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.request-form input,
+.request-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 2rem;
+    border: 2px solid #131314;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+
+
+.phone-input {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 10px ;
+}
+
+.phone-input select {
+    width: 80px;
+    padding: 12px;
+    
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.phone-input input {
+    margin-bottom: 0;
+}
+
+.request-form button {
+    background: #39AC68;
     color: #fff;
-    padding: 3rem 0;
-    text-align: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .about-content, .presence-content {
-        flex-direction: column;
-    }
-
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature {
-        width: 100%;
-        max-width: 300px;
-    }
+.request-form button:hover {
+    background: #2d8951;
 }
 
-@media (max-width: 480px) {
-    .hero {
-        padding: 3rem 0;
-    }
+/* Placeholder styles */
+.request-form input::placeholder {
+    color: #6c757d;
+    opacity: 0.8;
+}
 
-    .request-form {
-        padding: 1rem;
-    }
+/* Footer form specific styles */
+footer .request-form {
+    border: none;
+    padding: 0;
+}
 
-    .request-form input, .request-form button {
-        padding: 0.5rem;
-    }
+footer .request-form input,
+footer .request-form select {
+    
+    margin-bottom: 0;
+}
+
+footer .phone-input {
+    margin-bottom: 0;
 }
