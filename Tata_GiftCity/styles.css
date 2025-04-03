@@ -469,13 +469,71 @@ nav a {
     line-height: 1.6;
     color: #333;
 }
+/* Gift City Section */
+.gift-city-info {
+    background: #ffffff;
+    padding: 4rem 0;
+    width: 100%;
+}
+
+.gift-city-info .container {
+    display: flex;
+    gap: 4rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.gift-city-image,
+.gift-city-text {
+    flex: 1;
+    position: relative;
+}
+
+.gift-city-image {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 50px;
+}
+
+.gift-city-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.gift-city-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: rgba(38, 50, 56, 1);
+}
+
+.gift-city-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Dotted Background for GIFT City Image */
+.gift-city-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: url('./assets/bg_dotted.png') no-repeat;
+    background-size: contain;
+    z-index: 1;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-content,
     .gift-city-info .container {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
     .about-text,
@@ -483,114 +541,86 @@ nav a {
     .gift-city-text,
     .gift-city-image {
         width: 100%;
+        flex: none;
     }
     
     .about-image,
     .gift-city-image {
         display: flex;
         justify-content: center;
+        margin-bottom: 1rem;
     }
     
     .about-image img,
     .gift-city-image img {
-        width: 90%;
+        width: 100%;
         max-width: 350px;
+        height: auto;
     }
 
     /* Make sure image comes first in mobile for both sections */
-    .about-image {
-        order: 1;
-    }
-    
-    .about-text {
-        order: 2;
-    }
-    
+    .about-image,
     .gift-city-image {
         order: 1;
     }
     
+    .about-text,
     .gift-city-text {
         order: 2;
-    }
-    .gift-city-image,
-    .gift-city-text {
-        flex: 0;
-    }
-    .about-text h1,
-    .gift-city-text h1 {
-        font-size: 1.6rem;
+        padding: 0 1rem;
     }
 
     .about-text h1,
     .gift-city-text h1 {
         font-size: 2rem;
         text-align: center;
-    }
-
-    .gift-city-text h3 {
-        font-size: 1.5rem;
-        text-align: center;
+        margin-bottom: 1rem;
     }
 
     .about-text p,
     .gift-city-text p {
         font-size: 1rem;
         text-align: center;
+        margin: 0 auto;
+        max-width: 600px;
     }
 
     /* Adjust dotted backgrounds for mobile */
-    .about-image::after {
+    .about-image::after,
+    .gift-city-image::after {
         width: 80px;
         height: 80px;
-        bottom: -40px;
+        bottom: -20px;
+    }
+    
+    .about-image::after {
         right: 20%;
     }
     
     .gift-city-image::after {
-        width: 80px;
-        height: 80px;
-        bottom: -40px;
         left: 20%;
     }
 }
 
 @media (max-width: 480px) {
-    .about {
+    .about,
+    .gift-city-info {
         padding: 2rem 0;
     }
-    .about-image {
-        order: 1;
-    }
-    
-    .about-text {
-        order: 2;
-    }
-    
-    .gift-city-image {
-        order: 1;
-    }
-    
-    .gift-city-text {
-        order: 2;
-    }
+
+    .about-content,
     .gift-city-info .container {
-        display: flex;
-        gap: 1rem; /* Reduced gap between image and text */
-        width: 90%;
-    }
-    
-    .gift-city-image,
-    .gift-city-text {
-        flex: 1;
-    }
-    .about-text h1,
-    .gift-city-text h1 {
-        font-size: 1.6rem;
+        gap: 1.5rem;
     }
 
-    .gift-city-text h3 {
-        font-size: 1.3rem;
+    .about-text,
+    .gift-city-text {
+        padding: 0 1rem;
+    }
+
+    .about-text h1,
+    .gift-city-text h1 {
+        font-size: 1.8rem;
     }
 
     .about-text p,
@@ -598,22 +628,34 @@ nav a {
         font-size: 0.9rem;
     }
 
-    .gift-city-info {
-        padding: 1rem 0;
+    .about-image,
+    .gift-city-image {
+        margin-bottom: 0.5rem;
+    }
+
+    .about-image img,
+    .gift-city-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+    .gift-city-image{
+        margin-left: 270px;
+        max-height: 200px;
+        display: block;
+    }
+    .gift-city-text{
+        margin-bottom: auto;
+        margin-right: 270px;
     }
 
     .about-image::after,
     .gift-city-image::after {
         width: 60px;
         height: 60px;
-        bottom: -30px;
-    }
-    
-    .about-image img,
-    .gift-city-image img {
-        width: 100%;
+        bottom: -15px;
     }
 }
+
 
 
 /* GIFT City Importance */
