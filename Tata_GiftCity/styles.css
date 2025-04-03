@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -113,23 +113,28 @@ nav a {
     color: #999; /* Placeholder text color */
 }
 
-.phone-input {
+.request-form-header .phone-input {
     display: flex;
     gap: 0.5rem;
 }
 
-.phone-input select {
-    width: 20px; /* Fixed width for the country code dropdown */
+.request-form-header .phone-input select {
+    width: 65px; /* Fixed width for the country code dropdown */
+    height: 42px ;
     background: #fff;
-    color: #333;
+    color: #080808;
+    font-size: small;
     cursor: pointer;
 }
 
 .request-form-header .phone-input input {
-    flex: 1; /* Take up remaining space */
+    flex: 0.5; /* Take up remaining space */
     height: 42px;
 }
-
+.request-form-header  .email{
+    flex: 0.5; /* Take up remaining space */
+    height: 42px;
+}
 .request-form-header button {
     background: 
     linear-gradient(90deg, #39AC68 0%, #3577B5 100%), 
@@ -211,7 +216,7 @@ nav a {
 
 .about-content {
     display: flex;
-    gap: 1.5rem; /* Reduced gap between text and image */
+    gap: 0.5rem; /* Reduced gap between text and image */
     margin-bottom: 2rem;
 }
 
@@ -222,25 +227,27 @@ nav a {
 }
 
 .about-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-bottom: 1rem;
-    color: #1a3c34;
+    color: rgba(38, 50, 56, 1);
 }
 
 .about-text .highlight {
-    color: #1e90ff;
+    color: rgba(5, 100, 166, 1);
+    
 }
 
 .about-text p {
     font-size: 1.1rem;
     line-height: 1.6;
     max-width: 1200;
-    color: #333;
+    color: #000000;
 }
 
 .about-image img {
-    width: 80%;
+    width: 70%;
     border-radius: 8px;
+    
 }
 
 /* Dotted Background for About Image (Bottom-Right) */
@@ -300,7 +307,7 @@ nav a {
 .gift-city-text h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #1a3c34;
+    color: rgba(38, 50, 56, 1);
 }
 
 .gift-city-text p {
@@ -403,6 +410,7 @@ nav a {
 .gift-importance h1 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
+    color:  rgba(51, 51, 51, 1);
 }
 
 /* World Map Container */
@@ -601,24 +609,72 @@ nav a {
     }
 }
 
-
 /* Our Presence */
 .presence {
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
 .presence-content {
     display: flex;
-    gap: 0rem;
+    gap: 2rem;
+    align-items: center;
 }
 
-.presence-image, .presence-text {
+.presence-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.presence-image, 
+.presence-text {
     flex: 1;
 }
 
 .presence-image img {
     width: 80%;
     border-radius: 8px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .presence {
+        padding: 3rem 0;
+    }
+
+    .presence-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .presence-image {
+        order: 1;
+        width: 100%;
+    }
+
+    .presence-text {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+
+    .presence-image img {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .presence-text h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .presence {
+        padding: 2rem 0;
+    }
+
+    .presence-text h1 {
+        font-size: 1.8rem;
+    }
 }
 
 /* Equity Fund Section */
@@ -661,6 +717,10 @@ nav a {
     font-weight: 600;
     margin: 2rem 0 1rem;
     color: #fff;
+}
+.section-content .bullet{
+    font-size: 30px;
+    font-weight: 800;
 }
 
 .equity-fund p {
@@ -740,12 +800,11 @@ nav a {
 }
 
 /* Scheme Details */
-/* Scheme Details */
 .scheme-details {
     background: #ffffff;
     margin: 2rem 0;
     border-radius: 25px;
-    border: 1px solid #000;
+    border: 2px solid #000;
     overflow: hidden;
 }
 
@@ -755,14 +814,14 @@ nav a {
 }
 
 .scheme-table tr {
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #000;
 }
 
 .scheme-table td {
     padding: 1rem;
     font-size: 1rem;
     color: #333;
-    border-right: 1px solid #000;
+    border-right: 2px solid #000;
 }
 
 .scheme-table td:first-child {
@@ -837,12 +896,12 @@ nav a {
 }
 
 .invest-colum-can-invest {
-    border-right: 1px solid #e0e0e0;
+    border-right: 2px solid #000000;
 }
 
 .who-can-invest h4 {
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 900;
     margin-bottom: 1.5rem;
     color: #000000;
 }
@@ -859,7 +918,7 @@ nav a {
     gap: 1rem;
     margin-bottom: 1rem;
     font-size: 1rem;
-    color: #333;
+    color: #000000;
 }
 
 .who-can-invest li i {
@@ -868,8 +927,8 @@ nav a {
 }
 
 .who-can-invest li p {
-    margin: 0.5rem 0 0 2rem;
-    color: #666;
+    margin: 0.5rem 0 0 1rem;
+    color: #000000;
     font-size: 0.9rem;
     line-height: 1.6;
 }
@@ -925,103 +984,105 @@ nav a {
         font-size: 2rem;
     }
 }
-/* Previous CSS remains the same */
 
-/* Footer */
+
+/* Footer styles */
 footer {
-    background: #fff;
-    padding: 4rem 0;
-    text-align: left;
+    padding: 3rem 0;
+    background-color: #f5f5f5; /* Add your background color here */
 }
 
 footer .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 2rem;
 }
 
 footer h3 {
     font-size: 2rem;
-    font-weight: 600;
-    color: #333;
-    line-height: 1.3;
     margin: 0;
-}
-.request-form {
-    background: #fff;
-    padding: 2rem;
-    border: 2px solid #1c1d1e;
-    margin-bottom: 2rem;
-    border-radius: 8px;
+    flex: 1; /* Take up available space */
+    min-width: 300px; /* Minimum width before wrapping */
 }
 
-.request-form input,
-.request-form select {
+/* Form styling for footer */
+.request-form-footer {
+    flex: 1; /* Take up available space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.request-form-footer input,
+.request-form-footer select {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 2rem;
-    border: 2px solid #131314;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
     border-radius: 4px;
+    background: #fff;
+    color: #333;
     font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s;
 }
 
+.request-form-footer input::placeholder {
+    color: #999;
+}
 
-
-.phone-input {
+.request-form-footer .phone-input {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 10px ;
 }
 
-.phone-input select {
-    width: 80px;
-    padding: 12px;
-    
-    border-radius: 4px;
+.request-form-footer .phone-input select {
+    width: 65px;
+    height: 42px;
     background: #fff;
+    color: #080808;
+    font-size: small;
     cursor: pointer;
 }
 
-.phone-input input {
-    margin-bottom: 0;
+.request-form-footer .phone-input input {
+    flex: 0.5;
+    height: 42px;
 }
 
-.request-form button {
-    background: #39AC68;
+.request-form-footer .email {
+    flex: 0.5;
+    height: 42px;
+}
+
+.request-form-footer button {
+    background: 
+    linear-gradient(90deg, #39AC68 0%, #3577B5 100%), 
+    linear-gradient(0deg, #D9D9D9, #D9D9D9);
     color: #fff;
-    padding: 12px 24px;
+    padding: 0.75rem 1rem;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    border-radius: 7px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    width: 30%;
 }
 
-.request-form button:hover {
-    background: #2d8951;
-}
-
-/* Placeholder styles */
-.request-form input::placeholder {
-    color: #6c757d;
-    opacity: 0.8;
-}
-
-/* Footer form specific styles */
-footer .request-form {
-    border: none;
-    padding: 0;
-}
-
-footer .request-form input,
-footer .request-form select {
+/* Media query for responsive behavior */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     
-    margin-bottom: 0;
-}
-
-footer .phone-input {
-    margin-bottom: 0;
+    footer h3 {
+        margin-bottom: 1rem;
+    }
+    
+    .request-form-footer {
+        width: 20%;
+        margin-left: -15px;
+    }
+    
+    .request-form-footer button {
+        width: 50%;
+    }
 }
