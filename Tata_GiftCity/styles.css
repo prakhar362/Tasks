@@ -87,7 +87,7 @@ nav a {
     line-height: 1.5;
 }
 
-.request-form {
+.request-form-header {
     background: transparent;
     padding: 1rem 0; /* Reduced padding to match the design */
 }
@@ -97,8 +97,8 @@ nav a {
     margin-bottom: 1rem;
 }
 
-.request-form input,
-.request-form select {
+.request-form-header input,
+.request-form-header select {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
@@ -109,7 +109,7 @@ nav a {
     font-size: 1rem;
 }
 
-.request-form input::placeholder {
+.request-form-header input::placeholder {
     color: #999; /* Placeholder text color */
 }
 
@@ -119,17 +119,18 @@ nav a {
 }
 
 .phone-input select {
-    width: 80px; /* Fixed width for the country code dropdown */
+    width: 20px; /* Fixed width for the country code dropdown */
     background: #fff;
     color: #333;
     cursor: pointer;
 }
 
-.phone-input input {
+.request-form-header .phone-input input {
     flex: 1; /* Take up remaining space */
+    height: 42px;
 }
 
-.request-form button {
+.request-form-header button {
     background: 
     linear-gradient(90deg, #39AC68 0%, #3577B5 100%), 
     linear-gradient(0deg, #D9D9D9, #D9D9D9);
@@ -195,8 +196,6 @@ nav a {
     }
 }
 
-
-/* About Section */
 /* About Section */
 .about {
     background: #fff;
@@ -479,7 +478,7 @@ nav a {
     position: relative;
     background: linear-gradient(90deg, #39AC68 0%, #3577B5 100%);
     color: #fff;
-    padding: 3rem 0 7rem;
+    padding: 1rem 0 7rem;
     overflow: hidden;
     text-align: center;
 }
@@ -605,12 +604,12 @@ nav a {
 
 /* Our Presence */
 .presence {
-    padding: 3rem 0;
+    padding: 4rem 0;
 }
 
 .presence-content {
     display: flex;
-    gap: 2rem;
+    gap: 0rem;
 }
 
 .presence-image, .presence-text {
@@ -618,14 +617,313 @@ nav a {
 }
 
 .presence-image img {
-    width: 100%;
+    width: 80%;
     border-radius: 8px;
 }
 
-/* Equity Fund */
+/* Equity Fund Section */
 .equity-fund {
-    background: #e6f0fa;
-    padding: 3rem 0;
+    position: relative;
+    background: linear-gradient(90deg, #39AC68 0%, #3577B5 100%);
+    color: #fff;
+    padding: 4rem 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+.equity-fund::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/Vector.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.equity-fund .container {
+    position: relative;
+    z-index: 2;
+}
+
+.equity-fund h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.equity-fund .section-content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: #fff;
+}
+
+.equity-fund p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+/* Features Grid */
+.fund-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+    color: #000000;
+}
+
+.fund-features .feature-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Aligns children to the left */
+    padding: 20px;  /* Adds padding around all content in the card */
+}
+
+.feature-card img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 2rem;
+    align-self:self-start;
+    margin-left: -25%; 
+    
+}
+
+.feature-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #000000;
+    align-self: flex-start;  /* Explicitly aligns heading to the left */
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    align-self:normal;  /* Explicitly aligns paragraph to the left */
+}
+
+/* Fund Structure */
+.fund-structure {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12px;
+    padding: 0;
+    margin: 3rem 0;
+    backdrop-filter: blur(5px);
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents image from overflowing the rounded corners */
+}
+
+.fund-structure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Maintains aspect ratio while fitting inside */
+    margin: 0;
+    display: block;
+}
+
+/* Scheme Details */
+/* Scheme Details */
+.scheme-details {
+    background: #ffffff;
+    margin: 2rem 0;
+    border-radius: 25px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+.scheme-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scheme-table tr {
+    border-bottom: 1px solid #000;
+}
+
+.scheme-table td {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333;
+    border-right: 1px solid #000;
+}
+
+.scheme-table td:first-child {
+    font-weight: 900;
+    width: 30%;
+    color: #39AC68;
+    font-size: 1.1rem;
+    background-color: #ffffff;
+}
+
+.scheme-table td:last-child {
+    border-right: none;
+}
+
+/* Scheme Details Title */
+.scheme-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+/* Feature Card Styles */
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+    backdrop-filter: blur(5px);
+}
+
+.feature-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    margin-left: -10%;
+}
+
+.feature-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Who Can Invest Section */
+.who-can-invest-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.who-can-invest {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.invest-colum-can-invest,
+.invest-column-cannot-invest {
+    padding: 2rem;
+}
+
+.invest-colum-can-invest {
+    border-right: 1px solid #e0e0e0;
+}
+
+.who-can-invest h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+.who-can-invest ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.who-can-invest li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.who-can-invest li i {
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+.who-can-invest li p {
+    margin: 0.5rem 0 0 2rem;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .who-can-invest {
+        grid-template-columns: 1fr;
+    }
+
+    .invest-colum-can-invest {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+}
+
+.invest-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+}
+
+.invest-column li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.invest-column li::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+@media (max-width: 768px) {
+    .fund-features {
+        grid-template-columns: 1fr;
+    }
+
+    .who-can-invest {
+        grid-template-columns: 1fr;
+    }
+
+    .equity-fund h2 {
+        font-size: 2rem;
+    }
 }
 /* Previous CSS remains the same */
 
